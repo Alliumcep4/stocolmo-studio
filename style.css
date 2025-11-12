@@ -1,0 +1,922 @@
+:root {
+    --color-bg: #ffffff;
+    --color-text: #000000;
+    --color-accent: #686868;
+    --color-accent-text: #ffffff;
+    --color-border: #000000;
+    --font-title: 'Pixelify Sans', sans-serif;
+    --font-text: 'Jersey 10', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-text);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header - mantiene animaciones divertidas */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    background-color: var(--color-bg);
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+header:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+header .logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--color-border);
+    background-color: var(--color-bg);
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+header .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+header .logo:hover {
+    transform: rotate(360deg) scale(1.1);
+}
+
+/* Navegación interactiva */
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    font-family: var(--font-title);
+    font-weight: 700;
+    color: var(--color-text);
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: var(--color-accent);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav a:hover::before {
+    width: 80%;
+}
+
+nav a:hover {
+    color: var(--color-accent-text);
+    background-color: var(--color-accent);
+    border: 2px solid var(--color-border);
+    transform: translateY(-3px);
+}
+
+/* Home section - Hero dinámico */
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 8%;
+    gap: 60px;
+    min-height: 85vh;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.home .imagen {
+    flex: 1;
+    min-width: 350px;
+    display: flex;
+    justify-content: center;
+}
+
+.home .imagen img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 12px;
+    border: 3px solid var(--color-border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.home .imagen img:hover {
+    transform: rotateY(8deg) scale(1.08);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.home .contenido {
+    flex: 1;
+    min-width: 350px;
+}
+
+.home .contenido h1 {
+    font-family: var(--font-title);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 15px;
+    animation: titleWave 2s ease-in-out infinite alternate;
+    cursor: default;
+    transition: color 0.3s;
+    font-weight: 700;
+}
+
+.home .contenido h1:hover {
+    color: var(--color-accent);
+}
+
+@keyframes titleWave {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+.home .contenido h3 {
+    font-family: var(--font-title);
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    margin-bottom: 15px;
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+.home .contenido p {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Secciones con ancho completo */
+section {
+    padding: 60px 8%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Sobre Nosotros - centrado y atractivo */
+.about {
+    text-align: center;
+    padding: 100px 8%;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(to bottom, transparent 0%, rgba(104, 104, 104, 0.03) 50%, transparent 100%);
+}
+
+.texto-about {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 50px;
+    border: 3px solid var(--color-border);
+    border-radius: 20px;
+    background-color: var(--color-bg);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.texto-about::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(104,104,104,0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.texto-about:hover::before {
+    opacity: 1;
+}
+
+.texto-about:hover {
+    transform: translateY(-10px) rotate(-1deg);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    border-color: var(--color-accent);
+}
+
+.texto-about h1 {
+    font-family: var(--font-title);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+    font-weight: 700;
+}
+
+.texto-about h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--color-accent);
+    border-radius: 2px;
+    transition: width 0.4s ease;
+}
+
+.texto-about:hover h1::after {
+    width: 150px;
+}
+
+.texto-about p {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    line-height: 2;
+    text-align: center;
+    margin: 0 auto;
+    color: var(--color-text);
+    opacity: 0.9;
+    max-width: 700px;
+}
+
+/* Decoración adicional - mantiene el toque artístico */
+.texto-about::after {
+    content: '✦';
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    color: var(--color-accent);
+    opacity: 0.3;
+    transition: all 0.4s ease;
+}
+
+.texto-about:hover::after {
+    opacity: 0.8;
+    transform: rotate(180deg);
+}
+
+/* Galería - grid artístico */
+.galeria {
+    text-align: center;
+    padding: 100px 8%;
+}
+
+.contenedor-galeria h1 {
+    font-family: var(--font-title);
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    margin-bottom: 60px;
+    font-weight: 700;
+}
+
+.galeria .imagenes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.galeria .imagenes a {
+    display: block;
+    position: relative;
+}
+
+.galeria .imagenes img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border: 3px solid var(--color-border);
+    border-radius: 10px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.galeria .imagenes img:hover {
+    transform: scale(1.05) rotate(2deg);
+    border-color: var(--color-accent);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    z-index: 10;
+}
+
+/* Equipo - cartas divertidas */
+.equipo {
+    text-align: center;
+    padding: 100px 8% 120px 8%;
+    min-height: 500px;
+}
+
+.equipo h1 {
+    font-family: var(--font-title);
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    margin-bottom: 80px;
+    font-weight: 700;
+}
+
+.equipo .usuarios {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    position: relative;
+    min-height: 450px;
+}
+
+.equipo .user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border: 3px solid var(--color-border);
+    padding: 25px;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: var(--color-bg);
+    width: 300px;
+    min-height: 450px;
+    position: relative;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    z-index: 1;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.equipo .user img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border: 2px solid var(--color-border);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+}
+
+.equipo .user h3 {
+    font-family: var(--font-title);
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.equipo .user p {
+    font-size: 1.1rem;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.equipo .user:hover {
+    transform: translateY(-20px) scale(1.08) rotate(-2deg);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+    background-color: var(--color-accent);
+    color: var(--color-accent-text);
+    z-index: 100;
+}
+
+/* Efecto de brillo en cartas */
+.equipo .user::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transition: left 0.5s;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.equipo .user:hover::before {
+    left: 100%;
+}
+
+/* Formulario - mantiene interactividad */
+form {
+    max-width: 700px;
+    margin: 100px auto;
+    padding: 50px;
+    border: 3px solid var(--color-border);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+form:hover {
+    box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+}
+
+form fieldset {
+    border: none;
+    padding: 0;
+}
+
+form legend {
+    font-family: var(--font-title);
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+    width: 100%;
+}
+
+form label {
+    display: block;
+    font-family: var(--font-title);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    margin-top: 15px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid var(--color-border);
+    border-radius: 8px;
+    font-family: var(--font-text);
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+form button {
+    width: 100%;
+    padding: 18px;
+    margin-top: 20px;
+    background-color: var(--color-accent);
+    color: var(--color-accent-text);
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 1.2rem;
+    border: 2px solid var(--color-border);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+form button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+form button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+form button:hover {
+    background-color: var(--color-text);
+    color: var(--color-bg);
+    transform: translateY(-3px) rotate(1deg);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+form button:active {
+    transform: translateY(0px);
+}
+
+/* Footer - mantiene animaciones */
+footer {
+    padding: 80px 8% 40px 8%;
+    margin-top: 100px;
+    text-align: center;
+    border-top: 3px solid var(--color-border);
+    background-color: var(--color-bg);
+}
+
+footer .referencias {
+    margin-bottom: 50px;
+}
+
+footer .referencias a {
+    display: inline-block;
+    margin: 0 10px 15px 10px;
+    padding: 12px 24px;
+    text-decoration: none;
+    color: var(--color-text);
+    border: 2px solid var(--color-border);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-family: var(--font-title);
+    font-weight: 600;
+}
+
+footer .referencias a:hover {
+    background-color: var(--color-accent);
+    color: var(--color-accent-text);
+    border-color: var(--color-border);
+    transform: translateY(-5px) scale(1.05) rotate(-2deg);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+footer .direccion,
+footer .email {
+    margin-top: 30px;
+}
+
+footer h3 {
+    font-family: var(--font-title);
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+footer p {
+    font-size: 1.1rem;
+    opacity: 0.85;
+}
+
+/* Responsive - Mejorado para todos los dispositivos */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 1024px) {
+    header {
+        padding: 20px 5%;
+    }
+    
+    .home {
+        padding: 60px 5%;
+        gap: 40px;
+    }
+    
+    .home .imagen img {
+        max-width: 400px;
+    }
+    
+    .equipo .usuarios {
+        gap: 30px;
+    }
+    
+    .equipo .user {
+        width: 280px;
+    }
+}
+
+/* Tablets pequeñas */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 5%;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    header .logo {
+        width: 80px;
+        height: 80px;
+    }
+    
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    nav a {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .home {
+        padding: 50px 5%;
+        gap: 30px;
+        min-height: auto;
+    }
+    
+    .home .imagen {
+        min-width: 100%;
+    }
+    
+    .home .imagen img {
+        max-width: 350px;
+    }
+    
+    .home .contenido {
+        min-width: 100%;
+        text-align: center;
+    }
+    
+    .about {
+        padding: 60px 5%;
+    }
+    
+    .texto-about {
+        padding: 40px 25px;
+    }
+    
+    .texto-about::after {
+        font-size: 1.5rem;
+        top: 15px;
+        right: 20px;
+    }
+    
+    section {
+        padding: 50px 5%;
+    }
+    
+    .galeria {
+        padding: 60px 5%;
+    }
+    
+    .galeria .imagenes {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    
+    .galeria .imagenes img {
+        height: 250px;
+    }
+    
+    .equipo {
+        padding: 60px 5% 80px 5%;
+    }
+    
+    .equipo .usuarios {
+        flex-direction: column;
+        gap: 30px;
+        min-height: auto;
+    }
+    
+    .equipo .user {
+        width: 100%;
+        max-width: 350px;
+        min-height: 420px;
+    }
+    
+    .equipo .user img {
+        height: 220px;
+    }
+    
+    form {
+        padding: 35px 25px;
+        margin: 60px auto;
+    }
+    
+    form legend {
+        margin-bottom: 30px;
+    }
+    
+    form label {
+        font-size: 1rem;
+    }
+    
+    form input,
+    form textarea {
+        padding: 12px;
+        font-size: 1rem;
+    }
+    
+    form button {
+        padding: 15px;
+        font-size: 1.1rem;
+    }
+    
+    footer {
+        padding: 50px 5% 30px 5%;
+        margin-top: 60px;
+    }
+    
+    footer .referencias a {
+        padding: 10px 18px;
+        font-size: 0.95rem;
+        margin: 0 5px 10px 5px;
+    }
+    
+    footer h3 {
+        font-size: 1.2rem;
+    }
+    
+    footer p {
+        font-size: 1rem;
+    }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+    header {
+        padding: 12px 4%;
+    }
+    
+    header .logo {
+        width: 70px;
+        height: 70px;
+    }
+    
+    nav a {
+        padding: 7px 12px;
+        font-size: 0.85rem;
+    }
+    
+    .home {
+        padding: 40px 4%;
+    }
+    
+    .home .imagen img {
+        max-width: 100%;
+    }
+    
+    .about {
+        padding: 50px 4%;
+    }
+    
+    .texto-about {
+        padding: 30px 20px;
+        border-width: 2px;
+    }
+    
+    section {
+        padding: 40px 4%;
+    }
+    
+    .galeria {
+        padding: 50px 4%;
+    }
+    
+    .galeria .imagenes {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .galeria .imagenes img {
+        height: 220px;
+    }
+    
+    .equipo {
+        padding: 50px 4% 60px 4%;
+    }
+    
+    .equipo .usuarios {
+        gap: 25px;
+    }
+    
+    .equipo .user {
+        max-width: 100%;
+        min-height: 400px;
+        padding: 20px;
+    }
+    
+    .equipo .user img {
+        height: 200px;
+    }
+    
+    .equipo .user h3 {
+        font-size: 1.4rem;
+    }
+    
+    .equipo .user p {
+        font-size: 1rem;
+    }
+    
+    form {
+        padding: 25px 20px;
+        margin: 40px auto;
+        border-width: 2px;
+    }
+    
+    form legend {
+        margin-bottom: 25px;
+    }
+    
+    form label {
+        font-size: 0.95rem;
+        margin-top: 10px;
+    }
+    
+    form input,
+    form textarea {
+        padding: 10px;
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+    }
+    
+    form textarea {
+        min-height: 120px;
+    }
+    
+    form button {
+        padding: 14px;
+        font-size: 1rem;
+    }
+    
+    footer {
+        padding: 40px 4% 25px 4%;
+        margin-top: 50px;
+    }
+    
+    footer .referencias {
+        margin-bottom: 35px;
+    }
+    
+    footer .referencias a {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+        margin: 0 4px 8px 4px;
+    }
+    
+    footer .direccion,
+    footer .email {
+        margin-top: 25px;
+    }
+    
+    footer h3 {
+        font-size: 1.1rem;
+    }
+    
+    footer p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 360px) {
+    header .logo {
+        width: 60px;
+        height: 60px;
+    }
+    
+    nav a {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+    
+    .home .contenido h1 {
+        font-size: 2rem;
+    }
+    
+    .texto-about {
+        padding: 25px 15px;
+    }
+    
+    .equipo .user {
+        padding: 15px;
+    }
+    
+    form {
+        padding: 20px 15px;
+    }
+}

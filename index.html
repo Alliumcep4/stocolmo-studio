@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stocolmo Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="container-header">
+        <!--header-->
+    <header>
+        <div class="logo">
+            <img src="img/logo.jpg" alt="logo">
+        </div>
+        <nav>
+            <a href="#home">Inicio</a>
+            <a href="#about">Sobre nosotros</a>
+            <a href="#projects">Proyectos</a>
+            <a href="#team">Equipo</a>
+            <a href="#contact">Contacto</a>
+        </nav>
+    </header>
+    </section>
+    <!--fin header-->
+
+    <!--home-->
+    <section class="home" id="home">
+        <div class="imagen">
+            <img src="img/logo.jpg" alt="imagen_home">
+        </div>
+        <div class="contenido">
+                <h1>Stocolmo Studio</h1>
+                <h3>Bienvenido a Stocolmo Studio</h3>        
+                <p>*Pequeño texto introductorio</p>
+        </div>
+        
+    </section>
+    <!--fin home-->
+
+    <!--about-->
+    <section class="about" id="about">
+        <div class="texto-about">
+            <h1>Sobre nosotros</h1>
+            <p>*Cosas sobre el estudio no sé, Mikela</p>
+        </div>
+    </section>
+    <!--fin about-->
+
+    <!--galeria-->
+    <section class="galeria" id="proyectos">
+    <div class="contenedor-galeria">
+        <h1>Galería</h1>
+        <div class="imagenes">
+            <a href="https://www.instagram.com/p/C_nW9KAI7Hn/" target="_blank">
+                <img src="img/i0.png" alt="imagen_animac">
+            </a>
+            <img src="img/i1.png" alt="imagen 1">
+            <img src="img/i2.png" alt="imagen 2">
+        </div>
+    </div>
+    </section>
+    <!--fin galeria-->
+
+    <!--equipo-->
+    <section class="equipo" id="team">
+    <h1>Nuestro equipo</h1>
+
+    <div class="usuarios">
+        <div class="user">
+            <img src="img/migule.png" alt="miguel">
+            <h3>Miguel al cuadrado</h3>
+            <p>*Intro sobre quién es este mamawevo</p>
+        </div>
+
+        <div class="user">
+            <img src="img/migule.png" alt="socio1">
+            <h3>Socio 1</h3>
+            <p>*Intro sobre quién es este mamawevo</p>
+        </div>
+        
+        <!-- Puedes añadir más miembros -->
+        <div class="user">
+            <img src="img/migule.png" alt="socio2">
+            <h3>Socio 2</h3>
+            <p>*Intro sobre este otro</p>
+        </div>
+    </div>
+</section>
+    <!--fin equipo-->
+
+    <!--contactanos-->
+    <form action="base.php" method="post">
+        <fieldset>
+            <legend>Contáctanos</legend>
+
+            <label for="nombre">Nombre: </label>
+            <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+
+            <label for="email">Correo electrónico: </label>
+            <input type="email" id="email" name="email" placeholder="tucorreo@gmail.com" required>
+
+            <label for="mensaje">Mensaje: </label>
+            <textarea name="mensaje" id="mensaje" rows="10" cols="10" placeholder="Escribe tu mensaje..." required></textarea>
+            
+        </fieldset>
+
+        <button type="submit">Enviar</button>
+    </form>
+    <!--fin contactanos-->
+
+    <!--footer-->
+    <footer>
+        <div class="referencias">
+            <a href="#home">Inicio</a>
+            <a href="#about">Sobre nosotros</a>
+            <a href="#projects">Proyectos</a>
+            <a href="#team">Equipo</a>
+            <a href="#contact">Contacto</a>
+        </div>
+
+        <div class="direccion">
+            <h3>Encuéntranos en: </h3>
+            <p>*Insertar dirección de puta Reus</p>
+        </div>
+
+        <div class="email">
+            <h3>Gmail de contacto</h3>
+            <p>marikolesbiana@gmail.com</p>
+        </div>
+
+
+    </footer>
+    <!--fin footer-->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
